@@ -265,7 +265,41 @@ networks:
 ```
 
 
+위에는 공식사이트에서 소개하는 예제 파일.
 
+### 서비스 services
+
+여러 컨테이너를 정의하는데 사용됨
+
+위의 예로는 frontend, backend 라는 이름의 컨테이너 2개로 정의(설정, 구축)하겠다 라는 의미
+
+**키워드**
+
+*image : 컨테이너 이미지 정의
+*build : image를 활용하는 방식이 아닌 dockerfile의 경로를 지정해 빌드하여 사용하는 방법
+*dockerfile : 빌드할 도커파일의 이름이 Dockerfile이 아닌 경우 이름을 지정하기 위해 사용
+*ports : 호스트와 컨테이너 포트 바인딩 설정에 사용 (== 도커 멍령어 expose)
+*volumes : 호스트 지정된 경로로 컨테이너의 볼륨을 마운트 하도록 설정
+*container_name : 컨테이너 이름을 설정
+*command : 컨테이너 실행된 후 컨테이너의 쉘에서 실행시킬 쉘 명령어 설정
+*environment : 환경변수를 설정
+*env_file : 'enviroment'와 동일한 기능을 수행하지만 이 키워드를 사용하면 env 파일을 이용해서 적용할 수 있음
+depends_on : 다른 컨테이너와 의존관계를 설정
+reestart : 컨테이너 재시작과 관련하여 설정.
+
+### docker-compose 파일 실행
+
+docker-compose up
+
+기본적으로 docker-compose.yml or docker-compose.yaml 파일을 실행
+
+*-f : 위의 기본적인 파일명이 아닌 다른 이름으로 실행하고 싶을때 사용
+
+ex) docker-compose -f docker-compose-dev.yml up
+
+*-d 옵션 : 백그라운드에서 docker-compose를 실행하기 위해 사용
+
+ex) docker-compose up -d
 
 
 
