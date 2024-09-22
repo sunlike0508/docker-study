@@ -101,6 +101,71 @@ ex) docker container(image, volume, network)
 * -i : 컨테이너에 터미널 연결
 * -t : 특수 키를 사용가능하게 설정
 
+## 도커 컨테이너와 통신하기
+
+도커 컨테이너는 기본적으로 독립적인 환경에서 실행되기 때문에 컨테이너 밖에서 접근할 수 없음
+
+컨테이너와 통신하기 위해서는 컨테이너를 가동시키면서 p 옵션을 사용하여 호스트의 포트와 컨테이너의 포트를 설정해야 함
+
+```shell
+-p ${host_port}:${container_port}
+```
+
+이 설정을 사용하기 위해서는 호스트(서버 또는 PC)에서 사용 중인 포트와 번호가 겹치지 않는지 확인이 필요함
+
+<img width="532" alt="Screenshot 2024-09-22 at 15 53 25" src="https://github.com/user-attachments/assets/33fc5cea-0c64-4d46-84ae-a31a964172d7">
+
+```shell
+docker run --name test1 -d httpd
+
+docker run --name test2 -d -p 8080:80 httpd
+```
+
+test1 이라는 이름으로 컨테이너를 생성한다. 
+
+-d 는 백그라운드로 동작하겠다.
+
+-p 8080:80 호스트의 포트는 8080, 컨테이너의 포트는 80으로 세팅하여 네트워크를 설정합니다.
+
+위의 커맨드를 실행한 후에 docker 데스크탑으로 컨테이너 상태를 확인. 또는 커맨드를 입력하여 상태 확인.
+
+```shell
+docker ps -a
+
+docker container ls -a
+```
+
+위의 실습을 마치면 실행을 중지하고 삭제하는 작업을 수행하는 것이 좋음
+
+```shell
+docker stop test1
+
+docker rm test1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
