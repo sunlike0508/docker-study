@@ -213,6 +213,11 @@ ex) docker build -t test . (. 온점 있는 거임)
 
 ex) docker run --name test_app -p 80:80 test
 
+```shell
+docker build -t test123:1.1 .
+```
+
+이렇게 하면 버전도 tagging 할 수 있다.
 
 
 
