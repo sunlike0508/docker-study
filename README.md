@@ -207,7 +207,7 @@ RUN, CMD, ENTRYPOINT 등을 사용한 커맨드를 실행하는 디렉토리를 
 docker build ${option} ${dockerfile directory}
 ```
 
-ex) docker build -t test
+ex) docker build -t test . (. 온점 있는 거임)
 
 생성된 이미지를 컨테이너로 실행하기 위해서는 run 커맨드를 사용
 
