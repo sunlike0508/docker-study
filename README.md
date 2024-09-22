@@ -71,11 +71,25 @@ docker {대상} {커맨드} {옵션} {인자}
 
 ex) docker container(image, volume, network)
 
+### 도커 커맨드
 
+1) docker 입력
 
+2) docker [커맨드 대상] --help ex) docker container --help
 
+3) 위와 같은 방법으로 커맨드 수준을 높이고 뒤에 --help 입력 ex) docker container run --help
 
+**커맨드 종류**
 
+* start : 컨터이너 실행 -i
+* stop : 컨테이머 정지
+* create : 컨테이너 생성 --name, -e, -p, -v
+* run : 이미지를 내려받고 컨테이너를 생성 및 실행 --name, -e, -p, -v, -d, -i, -t
+* rm : 컨테이너 삭제 -f, -v
+* exec : 컨테이너에서 프로그램 실행 -i, -t
+* ls : 컨테이너 목록 출력 -a
+* cp : 컨테이너와 호스트간 파일 복사
+* commit : 컨테이너를 이미지로 변환
 
 
 
