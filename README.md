@@ -203,7 +203,7 @@ RUN, CMD, ENTRYPOINT 등을 사용한 커맨드를 실행하는 디렉토리를 
 
 ### 도커 빌드 커맨드
 
-```shel
+```shell
 docker build ${option} ${dockerfile directory}
 ```
 
@@ -219,6 +219,50 @@ docker build -t test123:1.1 .
 
 이렇게 하면 버전도 tagging 할 수 있다.
 
+## docker compose
+
+compose 파일은 도커 애플리케이션의 서비스, 네트워크 볼륨등의 설정을 yaml 형식으로 작성하는 파일
+
+```docker
+services:
+  frontend:
+    image: example/webapp
+    ports:
+      - "443:8043"
+    networks:
+      - front-tier
+      - back-tier
+    configs:
+      - httpd-config
+    secrets:
+      - server-certificate
+
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+    driver: flocker
+    driver_opts:
+      size: "10GiB"
+
+configs:
+  httpd-config:
+    external: true
+
+secrets:
+  server-certificate:
+    external: true
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}
+```
 
 
 
