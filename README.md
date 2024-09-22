@@ -10,4 +10,12 @@
 
 필요한 요소만으로 구성되어 있어 오버헤드가 작음
 
+<img width="694" alt="Screenshot 2024-09-22 at 14 55 26" src="https://github.com/user-attachments/assets/b4e7bcfd-0360-4a4d-b3f1-bebf1dbee7f7">
+
+Infrastructure : 우리가 쓰는 장비. ex) ram, cpu
+
+Host Operating System : 우리가 아는 OS
+
+
+
 
